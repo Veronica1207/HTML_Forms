@@ -1,15 +1,55 @@
 <!doctype html>
 
-<html>
+<html lang = "en">
     <!--
         author: Veronica !01208105
         version: March 15th, 2021
     -->
 <head>
-
+    <title>Super Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    
+    <header>
+        <h1>Super Form</h1>
+    </header>
+    <main>
+        <h2>Tell us about yourself!</h2>
+        <form   action="http://bcitcomp.ca/comp1850_homework06.php"
+		        method="post"
+		        class="my_form">
+                
+        <label	for="firstname">First Name:</label>
+        <input 	type="text"	
+                name="firstname" 
+                id="firstname"
+                required="required"		/>
+                        
+        <label	for="lastname">Last Name:</label>
+        <input 	type="text"	
+                name="lastname" 
+                id="lastname"
+                required="required"		/>
+
+        <label	for="studentnumber">Student Number:</label>
+        <input 	type="text"	
+                name="studentnumber" 
+                id="studentnumber"
+                required="required"		/>
+
+        
+        
+                
+        <input 	type="submit"	
+                value="Submit" />
+
+
+        </form>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
