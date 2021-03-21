@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    color: var(--text-color);
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -11,37 +12,41 @@ Variables
 HEX: #3a4664 (dark blue)
 HEX: #16315c dark blue 2
 HEX: #eaa0a2 soft pink
-HEX: #eaa0a2 tender pink
+HEX: #ffdbdc tender pink
 HEX: #aaaaaa grey
 HEX: #bc175c bright pink
 */
 
 :root{
-
+    --accent-color: #eaa0a2;
+    --text-color: #3a4664;
+    --light-pink: #ffdbdc;
 }
 
 body{
-    
     margin: 0;
     min-height: 100vh;
     background-image: url(../imges/background.jpg);
     background-attachment: fixed;
 }
 
+h1 {
+    color: #16315c;
+    margin: 5px;
+    padding: 0px;
+}
+
+h2 {
+    margin-top: 5px;
+}
+
+header {
+    background-color:var(--light-pink);
+}
+
 footer {
     display: flex;
     justify-content:center;
-}
-
-.wrapper {
-    min-height: 100vh;
-    width: 800px;
-	margin: 10px auto;
-	background-color: white;
-	padding: 30px;
-	border: 5px solid black;
-    display: flex;
-    flex-direction: column;
 }
 
 fieldset {
@@ -55,6 +60,49 @@ fieldset .checkbox-set {
     padding: 12px 0px;
 }
 
+fieldset input {
+    visibility: hidden;
+}
+
+fieldset label:before {
+    content:"";
+    background-color: var(--accent-color);
+    display: inline-block;
+    width:16px;
+    height:16px;
+    position: relative;
+    right: 18px;
+}
+
+fieldset input:checked ~ label:before {
+    background-image: url("../imges/heart.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+}
+.wrapper {
+    min-height: 100vh;
+    width: 800px;
+	margin: 10px auto;
+    margin-top: 0px;
+	background-color: white;
+	padding: 30px;
+	border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.header-wrapper {
+    width: 800px;
+	margin: 10px auto;
+    margin-bottom: 0px;
+	background-color: var(--light-pink);
+	padding: 30px;
+	border: 5px solid black;
+    border-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
 .single-field-form {
     margin: 20px 0px;
     display: flex;
@@ -66,16 +114,58 @@ fieldset .checkbox-set {
     height: 25px;
 }
 
+.single-field-form input[type="text"],
+#field-form textarea {
+    border-top: solid 2px var(--light-pink);
+    border-left: solid 2px var(--light-pink);
+    border-bottom: 0px;
+    border-right: 0px;
+    box-shadow: 2px 2px 2px var(--accent-color);
+    transition:all .2s linear;
+}
 
+/*
+HEX: #d6eaeb light green
+HEX: #c0e9e5
+HEX: #c0e9e5
+*/
+
+.single-field-form input[type="text"]:focus,
+#field-form textarea:focus {
+    outline: none;
+    border: solid 2px #d6eaeb;
+    box-shadow: 0 0 2px 2px #c0e9e5;
+    background:linear-gradient(#fff, #fff, #d6eaeb);
+}
+
+
+.my-form input[type="submit"]{
+    width: 15%;
+    height: 40px;
+    border: solid 2px var(--light-pink);
+    box-shadow: 2px 2px 2px gray;;
+    background-color: var(--light-pink);
+    font-size: 1em;
+}
+
+.my-form input[type="submit"]:hover,
+.my-form input[type="submit"]:focus,
+.my-form input[type="submit"]:active {
+    cursor: pointer;
+    transform:scale(1.1);
+    border: 0px;
+    background-image: url(../imges/button.jpg);
+    background-repeat: no-repeat;
+    background-size: 110px 40px;
+    color: white;
+    font-weight: bold;
+}
 
 #prefix-form {
-    margin-bottom: 20px;
+    margin: 20px 0px;
     display: flex;
 }
 
-#prefix-form legend{
-    padding: 10px 2px;
-}
 #prefix-form input[type="radio"] {
     margin: 0px;
     width: 15px;
@@ -84,7 +174,26 @@ fieldset .checkbox-set {
 #prefix-form label {
     position: relative;
     display:inline-block;
-    margin-left: 15px;
+    margin-left: 18px;
+}
+
+#prefix-form input {
+    visibility: hidden;
+}
+
+#prefix-form label:before {
+    content:"";
+    background-color: var(--accent-color);
+    width:20px;
+    height:20px;
+    position:absolute;
+    right: 40px;
+    border-radius: 50%;
+}
+
+#prefix-form input:checked ~ label:before {
+    background-color: white;
+    border: 5px solid var(--accent-color);
 }
 
 #field-form {
@@ -97,55 +206,5 @@ fieldset .checkbox-set {
     width: 50%;
     min-height: 150px;
     margin-top: 3px;
-    border: solid 2px gray;
 }
-
-.my-form input[type="submit"]{
-    width: 15%;
-    height: 40px;
-    border: solid 2px gray;
-    box-shadow: gray;
-    background-color: #eaa0a2;
-    font-size: 1em;
-}
-
-
-fieldset input {
-    visibility: hidden;
-}
-
-fieldset label:before {
-    content:"";
-    background-color: #eaa0a2;
-    display: inline-block;
-    width:16px;
-    height:16px;
-    position: relative;
-    right: 18px;
-}
-
-fieldset input:checked ~ label:before {
-    background-image: url("../imges/heart.png");
-    background-position: center center;
-    /* show it once */
-    background-repeat: no-repeat;
-    /* assign size */
-    background-size: 18px 18px;
-}
-
-#prefix-form label:before {
-    content:"";
-    background-color: #eaa0a2;
-    width:20px;
-    height:20px;
-    position:absolute;
-    right: 45px;
-    border-radius: 50%;
-}
-
-#prefix-form input:checked ~ label:before {
-    background-color: white;
-    border: 6px solid #eaa0a2;
-}
-
 
