@@ -9,8 +9,11 @@
     <title>Super Form</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet">
 </head>
 <body>
+    
+    <div class = "wrapper">
     <header>
         <h1>Super Form</h1>
     </header>
@@ -18,9 +21,10 @@
         <h2>Tell us about yourself!</h2>
         <form   action="http://bcitcomp.ca/comp1850_homework06.php"
 		        method="post"
-		        class="my_form"
+		        class="my-form"
                 target="_blank">
-                
+            
+            <div id ="prefix-form">
             <legend>Prefix</legend>
             <input  type="radio"	
                     name="prefix" 
@@ -37,74 +41,99 @@
                     id="ms"
                     value="Ms."	/>
             <label  for="ms">Ms.</label>
-        
+            </div>
+
+            <div class = "single-field-form">
             <label  for="firstname">First Name:</label>
             <input  type="text"	
                     name="firstname" 
                     id="firstname"
                     required="required"		/>
-                        
+            </div>
+            <div class = "single-field-form">            
             <label  for="lastname">Last Name:</label>
             <input  type="text"	
                     name="lastname" 
                     id="lastname"
                     required="required"		/>
 
+            <div class = "single-field-form">
             <label  for="studentnumber">Student Number:</label>
             <input  type="text"	
                     name="studentnumber" 
                     id="studentnumber"
                     required="required"		/>
+            </div>
 
             <fieldset>
                 <legend>Which, if any, part time BCIT you consider regestering for?</legend>
+                <div class="checkbox-set">
                 <input 	type="checkbox" 
                         id="1850" 
                         name="courses"
                         value="comp1850" />	
                 <label 	for="1850">COMP1850 Introduction to Web Development</label>	
-                
+                </div>
+
+                <div class="checkbox-set">
                 <input 	type="checkbox" 
                         id="1950" 
                         name="courses"
                         value="comp1950" />	
                 <label 	for="1950">COMP1950 Web Development</label>	
-                    
+                </div>
+
+                <div class="checkbox-set">
                 <input 	type="checkbox" 
                         id="1409" 
                         name="courses"
                         value="comp1409" />	
                 <label 	for="1409">COMP1409 Programming Fundamentals with Python</label>
-                
+                </div>
+
+                <div class="checkbox-set">
                 <input 	type="checkbox" 
                         id="1630" 
                         name="courses"
                         value="comp1630" />	
                 <label 	for="1630">COMP1630 Relational Database Design and SQL</label>
+                </div>
+                
+                <div class="checkbox-set">
                 <input 	type="checkbox" 
                         id="2015" 
                         name="courses"
                         value="comp2015" />	
                 <label 	for="2015">COMP2015 Web Development with JavaScript</label>
+                </div>
+
+                <div class="checkbox-set">
                 <input 	type="checkbox" 
                         id="3015" 
                         name="courses"
                         value="comp3015" />	
                 <label 	for="3015">COMP3015 Introduction to Web Applications with PHP</label>
-                            
+                </div>
+
             </fieldset>
+            <div id="field-form">
             <label>Have more to say? Leave us a comment!</label>
             <textarea   name="comments"
                         placeholder="Leave a comment"
                         id="comments"></textarea> 
-            
+            </div>
+
             <input  type="submit"	
                     value="Submit" />
         </form>
     </main>
-    <footer>
 
+</div>
+    <footer>
+        <p>COMP 1850, 2021</p>
     </footer>
+    
 </body>
+
 
 </html>
