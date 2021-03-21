@@ -13,6 +13,7 @@ HEX: #16315c dark blue 2
 HEX: #eaa0a2 soft pink
 HEX: #eaa0a2 tender pink
 HEX: #aaaaaa grey
+HEX: #bc175c bright pink
 */
 
 :root{
@@ -69,17 +70,21 @@ fieldset .checkbox-set {
 
 #prefix-form {
     margin-bottom: 20px;
+    display: flex;
 }
 
 #prefix-form legend{
     padding: 10px 2px;
 }
 #prefix-form input[type="radio"] {
+    margin: 0px;
     width: 15px;
     height: 15px;
 }
 #prefix-form label {
-    padding: 0px 5px;
+    position: relative;
+    display:inline-block;
+    margin-left: 15px;
 }
 
 #field-form {
@@ -100,6 +105,47 @@ fieldset .checkbox-set {
     height: 40px;
     border: solid 2px gray;
     box-shadow: gray;
-    background-color: pink;
+    background-color: #eaa0a2;
     font-size: 1em;
 }
+
+
+fieldset input {
+    visibility: hidden;
+}
+
+fieldset label:before {
+    content:"";
+    background-color: #eaa0a2;
+    display: inline-block;
+    width:16px;
+    height:16px;
+    position: relative;
+    right: 18px;
+}
+
+fieldset input:checked ~ label:before {
+    background-image: url("../imges/heart.png");
+    background-position: center center;
+    /* show it once */
+    background-repeat: no-repeat;
+    /* assign size */
+    background-size: 18px 18px;
+}
+
+#prefix-form label:before {
+    content:"";
+    background-color: #eaa0a2;
+    width:20px;
+    height:20px;
+    position:absolute;
+    right: 45px;
+    border-radius: 50%;
+}
+
+#prefix-form input:checked ~ label:before {
+    background-color: white;
+    border: 6px solid #eaa0a2;
+}
+
+
