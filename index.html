@@ -22,8 +22,7 @@
         <h2>Tell us about yourself!</h2>
         <form   action="http://bcitcomp.ca/comp1850_homework06.php"
 		        method="post"
-		        class="my-form"
-                target="_blank">
+		        class="my-form">
             
             <legend>Prefix</legend>
             <div id ="prefix-form">           
@@ -31,7 +30,8 @@
             <input  type="radio"	
                     name="prefix" 
                     id="mr"
-                    value="Mr."	/>
+                    value="Mr."
+                    required="required"	/>
             <label  for="mr">Mr.</label>
             </div>
             <div>
@@ -121,6 +121,13 @@
                         value="comp3015" />	
                 <label 	for="3015">COMP3015 Introduction to Web Applications with PHP</label>
                 </div>
+                <div class="checkbox-set">
+                    <input 	type="checkbox" 
+                            id="none" 
+                            name="courses"
+                            value="nonechosen" />	
+                    <label 	for="none">None of the above</label>
+                    </div>
 
             </fieldset>
             <div id="field-form">
